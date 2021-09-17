@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import blog.views
+import account.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('delete/<str:id>', blog.views.delete, name='delete'),
     path('hashtag/', blog.views.hashtagform, name='hashtag'),
     path('search/<int:hashtag_id>/', blog.views.search, name='search'),
+    path('signup/',account.views.signup,name='signup'),
+    path('login/',account.views.login,name='login'),
+    path('logout/',account.views.logout,name='logout'),
 ]
